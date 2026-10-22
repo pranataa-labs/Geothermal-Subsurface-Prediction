@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large ML Model files (> 100MB rejected by GitHub)
+model_geotermal_hybrid.pkl
+*.pkl.gz
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Checkpoints
+.ipynb_checkpoints/
+
+# Operating System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
