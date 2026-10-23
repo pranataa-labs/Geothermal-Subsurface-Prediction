@@ -1,18 +1,20 @@
-# Geothermal Subsurface Temperature Profile Prediction
+# 🌋 Geothermal Subsurface Temperature Profile Prediction
 
 Web application for predicting multi-depth subsurface geothermal temperature profiles (1,000m to 5,000m) based on earth science features using a Multi-Output Hybrid Stacking Ensemble (Random Forest + XGBoost).
 
 ---
 
-## Features
-- **Multi-Depth Prediction**: Predicts reservoir temperatures at depths of 1000m, 2000m, 3000m, 4000m, and 5000m simultaneously.
-- **Hybrid Ensemble Machine Learning**: Combines Random Forest and XGBoost base estimators through Stacking Regression.
-- **Geothermal Gradient Visualization**: Interactive temperature gradient depth curve using Plotly with dynamic heatmap color-coding.
-- **Prospectivity Assessment**: Automatically classifies geothermal commercial potential (Highly Prospective, Moderately Prospective, or High Risk).
+## ⚡ Key Predictive Features
+
+- **Multi-Depth Prediction:** Predicts reservoir temperatures at depths of 1,000m, 2,000m, 3,000m, 4,000m, and 5,000m simultaneously.
+- **Hybrid Ensemble Machine Learning:** Combines Random Forest and XGBoost base estimators through Stacking Regression.
+- **Geothermal Gradient Visualization:** Interactive temperature gradient depth curve using Plotly with dynamic heatmap color-coding.
+- **Prospectivity Assessment:** Automatically classifies geothermal commercial potential (*Highly Prospective, Moderately Prospective, or High Risk*).
 
 ---
 
-## 10 Input Geophysical Features
+## 🔬 Input Geophysical Feature Parameters (10 Dimensions)
+
 1. `Vp_7000m`: P-wave velocity at 7,000m depth (km/s)
 2. `crustal_thickness`: Crustal thickness (km)
 3. `dVs_20km`: S-wave velocity anomaly at 20km depth (%)
@@ -26,36 +28,37 @@ Web application for predicting multi-depth subsurface geothermal temperature pro
 
 ---
 
-## Machine Learning Model File
+## 📦 Serialized Machine Learning Artifacts
+
 > **Note:** The serialized model file `model_geotermal_hybrid.pkl` (~2.05 GB) exceeds GitHub's 100 MB upload limit and is excluded from git tracking via `.gitignore`.
 > Place `model_geotermal_hybrid.pkl` and `scaler_geotermal.pkl` in the root directory before running the application.
 
 ---
 
-## Installation & Usage
+## 🚀 Local Installation & Setup Guide
 
-1. **Clone repository**:
-   ```bash
-   git clone https://github.com/pranataa-labs/geothermal-subsurface-prediction.git
-   cd geothermal-subsurface-prediction
-   ```
+### 1. Repository Cloning
+```bash
+git clone https://github.com/pranataa-labs/Geothermal-Subsurface-Prediction.git
+cd Geothermal-Subsurface-Prediction
+```
 
-2. **Create and activate virtual environment**:
-   ```bash
-   python -m venv venv
-   # Windows:
-   venv\Scripts\activate
-   # Linux/macOS:
-   source venv/bin/activate
-   ```
+### 2. Virtual Environment Configuration
+```bash
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
+```
 
-3. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 3. Dependency Installation
+```bash
+pip install -r requirements.txt
+```
 
-4. **Run the web application**:
-   ```bash
-   python app.py
-   ```
-   Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+### 4. Launch Web Application
+```bash
+python app.py
+```
+Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
