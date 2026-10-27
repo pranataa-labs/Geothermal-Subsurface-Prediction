@@ -12,17 +12,41 @@ Official codebase and interactive web dashboard accompanying the research articl
 
 ---
 
-## 📥 Reviewer Resources & Large Artifacts Download
+## 📥 Reviewer Resources & Large Artifacts Download (Google Drive)
 
-Due to GitHub's 100 MB individual file upload limit, the large serialized machine learning model (`model_geotermal_hybrid.pkl`, ~976 MB) and full benchmark dataset (`dataset_200k_with_coords.csv`, ~41 MB) are hosted on Google Drive:
+Due to GitHub's 100 MB individual file upload limit, the large serialized machine learning model (`model_geotermal_hybrid.pkl`, ~976 MB), full benchmark dataset (`dataset_200k_with_coords.csv`, ~41 MB), and high-resolution output assets are hosted on Google Drive:
 
 👉 **[Download Reviewer Artifacts on Google Drive](https://drive.google.com/drive/folders/1eAcN74KvVi5Pjj2qIRBgYzUZwVC3m7qV?usp=sharing)**
 
-### Contents of the Google Drive Folder:
-1. `model_geotermal_hybrid.pkl` (976 MB): Serialized Multi-Output Hybrid Stacking Regressor (Random Forest + XGBoost with depth-specific OLS meta-learners, $N = 200,000$).
-2. `scaler_geotermal.pkl` (855 B): Serialized `StandardScaler` fitted on the 10 geophysical input dimensions.
-3. `dataset_200k_with_coords.csv` (41.1 MB): Extracted benchmark dataset from the Stanford Thermal Earth Model (STEM-US).
-4. `output_revisi/`: Directory containing all high-resolution figures (`Figure_1_Revised_Architecture.png`, `Figure_5_Revised_Flask_Dashboard.png`, SHAP summary plots, Taylor diagram) and verification spreadsheets (Tables 1–7 in `.xlsx`).
+### 📂 Google Drive Folder Structure (`artikel-revisi`):
+
+```
+artikel-revisi/
+├── 📁 core-model-website/      # Serialized ML Model Artifacts
+│   ├── model_geotermal_hybrid.pkl  (~976 MB, Multi-Output Hybrid Stacking Regressor)
+│   └── scaler_geotermal.pkl        (855 B, Fitted StandardScaler)
+│
+├── 📁 dataset/                 # Benchmark Dataset
+│   └── dataset_200k_with_coords.csv (~41.1 MB, Conterminous US multi-physics dataset)
+│
+├── 📁 image-xlxs/              # Publication Figures & Tables
+│   ├── Figure_1_Revised_Architecture.png
+│   ├── Figure_5_Revised_Flask_Dashboard.png
+│   ├── Output_2_SHAP_Plot_MultiDepth.png
+│   ├── Output_3_RMSE_vs_Depth.png
+│   ├── Output_4_Taylor_Diagram_MultiDepth.png
+│   ├── Tabel_1_Statistik_Distribusi_Variabel.xlsx
+│   ├── Tabel_2_Ablation_Study_Summary.xlsx
+│   ├── Tabel_3_Performa_Per_Kedalaman_dan_Residual.xlsx
+│   ├── Tabel_4_Uji_Statistik_Wilcoxon_Holm_Bonferroni.xlsx
+│   ├── Tabel_5_Evaluasi_Gradien_Suhu_Vertikal_dan_Inversi.xlsx
+│   ├── Tabel_6_Spatial_Block_Cross_Validation.xlsx
+│   ├── Tabel_7_SHAP_dan_Feature_Importance_Multi_Kedalaman.xlsx
+│   └── Tabel_Hyperparameter_Optuna.xlsx
+│
+└── 📁 pelatihan-model/         # Experimental Training Notebook
+    └── Revisi_Model.ipynb          (Complete Python training & validation pipeline)
+```
 
 ---
 
@@ -98,12 +122,14 @@ cd geothermal-subsurface-prediction
 ```
 
 ### Step 2: Download Model Artifacts
-Download `model_geotermal_hybrid.pkl` from the **[Google Drive Link](https://drive.google.com/drive/folders/1eAcN74KvVi5Pjj2qIRBgYzUZwVC3m7qV?usp=sharing)** and place it directly inside the root folder:
+From the Google Drive folder **`artikel-revisi/core-model-website/`**, download **`model_geotermal_hybrid.pkl`** and place it directly inside the project root folder:
 ```
 geothermal-subsurface-prediction/
-├── model_geotermal_hybrid.pkl   <-- Place downloaded .pkl here
-├── scaler_geotermal.pkl
+├── model_geotermal_hybrid.pkl   <-- Place downloaded .pkl from core-model-website/ here
+├── scaler_geotermal.pkl         (included in repo or download from core-model-website/)
 ├── app.py
+├── run_app.bat
+├── requirements.txt
 ...
 ```
 
@@ -135,7 +161,7 @@ Open your web browser and navigate to:
 ## 📓 Running the Experimental Notebook (`Revisi_Model.ipynb`)
 
 To reproduce the complete experimental workflow:
-1. Ensure `dataset_200k_with_coords.csv` is downloaded from Google Drive and located in your working directory.
+1. Download **`dataset_200k_with_coords.csv`** from the **`artikel-revisi/dataset/`** folder on Google Drive and place it in your working directory.
 2. Launch Jupyter Notebook or JupyterLab:
    ```bash
    jupyter notebook Revisi_Model.ipynb
