@@ -7,6 +7,11 @@ __pycache__/
 model_geotermal_hybrid.pkl
 *.pkl.gz
 
+# Datasets and Large Data Files
+*.csv
+*.xlsx
+*.parquet
+
 # Virtual Environments
 venv/
 env/
