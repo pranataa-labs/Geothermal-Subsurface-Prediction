@@ -8,23 +8,16 @@
 ---
 
 > [!IMPORTANT]
-> ### 🎯 Primary Reviewer Deliverable: [`Revisi_Model.ipynb`](./Revisi_Model.ipynb)
-> The primary experimental notebook requested by the peer reviewers is available directly in the root of this repository: **[`Revisi_Model.ipynb`](./Revisi_Model.ipynb)**.  
-> It provides the full, reproducible Python execution pipeline and numerical outputs covering:
-> 1. **Optuna Bayesian TPE Hyperparameter Tuning** ($N_{\text{tune}} = 20,000$ independent partition).
-> 2. **9-Model Ablation Study & 5-Fold Cross-Validation** ($N = 200,000$ benchmark and disjoint $N = 180,000$).
-> 3. **Paired Wilcoxon Signed-Rank Statistical Tests** with Holm-Bonferroni correction and rank-biserial effect sizes ($r_{\text{rb}}$).
-> 4. **Physical Gradient Consistency** ($\Delta T / \Delta z$) and zero-inversion verification ($0.0000\%$ violation rate).
-> 5. **Spatial Block Cross-Validation** across geographically disjoint regional geological clusters.
-> 6. **Multi-Depth SHAP Attribution** and multi-depth Taylor diagram evaluation.
+> ### 🎯 Model Testing: [`revised-model-testing.ipynb`](./revised-model-testing.ipynb)
+> The comprehensive model evaluation and verification pipeline is available directly in **[`revised-model-testing.ipynb`](./revised-model-testing.ipynb)**, containing the complete experimental execution, ablation benchmarks, physical gradient consistency evaluations, spatial validation, and statistical significance testing.
 
 ---
 
-## 📥 Reviewer Resources & Large Artifacts Download (Google Drive)
+## 📥 Large Artifacts & Dataset Download (Google Drive)
 
 Due to GitHub's 100 MB individual file upload limit, the large serialized machine learning model (`model_geotermal_hybrid.pkl`, ~976 MB), full benchmark dataset (`dataset_200k_with_coords.csv`, ~41 MB), and high-resolution output assets are hosted on Google Drive:
 
-👉 **[Download Reviewer Artifacts on Google Drive](https://drive.google.com/drive/folders/1eAcN74KvVi5Pjj2qIRBgYzUZwVC3m7qV?usp=sharing)**
+👉 **[Download Project Artifacts on Google Drive](https://drive.google.com/drive/folders/1eAcN74KvVi5Pjj2qIRBgYzUZwVC3m7qV?usp=sharing)**
 
 ### 📂 Google Drive Folder Structure (`artikel-revisi`):
 
@@ -52,8 +45,9 @@ artikel-revisi/
 │   ├── Tabel_7_SHAP_dan_Feature_Importance_Multi_Kedalaman.xlsx
 │   └── Tabel_Hyperparameter_Optuna.xlsx
 │
-└── 📁 pelatihan-model/         # Experimental Training Notebook
-    └── ⭐ Revisi_Model.ipynb       (Primary reviewer notebook mirror)
+└── 📁 pelatihan-model/         # Model Training & Testing Notebooks
+    ├── core-model-training.ipynb       (Model training script to produce .pkl artifacts)
+    └── revised-model-testing.ipynb     (Comprehensive model evaluation & testing pipeline)
 ```
 
 ---
@@ -62,17 +56,18 @@ artikel-revisi/
 
 ```
 geothermal-subsurface-prediction/
-├── ⭐ Revisi_Model.ipynb       # 🎯 [PRIMARY REVIEWER NOTEBOOK] Complete experimental & statistical validation pipeline
-├── app.py                      # Flask backend application serving predictions
-├── requirements.txt            # Python dependencies
-├── run_app.bat                 # One-click Windows application launcher
-├── scaler_geotermal.pkl        # Serialized StandardScaler (855 bytes)
-├── static/                     # CSS stylesheets and UI assets
+├── ⭐ revised-model-testing.ipynb   # 🎯 [MODEL TESTING] Comprehensive experimental evaluation & statistical testing pipeline
+├── core-model-training.ipynb       # ⚙️ Core model training script used to generate .pkl artifacts
+├── app.py                          # Flask backend application serving predictions
+├── requirements.txt                # Python dependencies
+├── run_app.bat                     # One-click Windows application launcher
+├── scaler_geotermal.pkl            # Serialized StandardScaler (855 bytes)
+├── static/                         # CSS stylesheets and UI assets
 │   ├── dashboard.css
 │   ├── login.css
 │   └── login.js
-├── templates/                  # Frontend HTML templates
+├── templates/                      # Frontend HTML templates
 │   └── index.html
-├── .gitignore                  # Git tracking exclusion rules
-└── README.md                   # Project documentation
+├── .gitignore                      # Git tracking exclusion rules
+└── README.md                       # Project documentation
 ```
