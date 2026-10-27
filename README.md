@@ -5,11 +5,6 @@
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Google Drive Artifacts](https://img.shields.io/badge/Google%20Drive-Artifacts%20%26%20Model-orange.svg)](https://drive.google.com/drive/folders/1eAcN74KvVi5Pjj2qIRBgYzUZwVC3m7qV?usp=sharing)
 
-Official codebase and interactive web dashboard accompanying the research article:  
-**"Multi-Output Hybrid Ensemble Application for Predicting Geothermal Subsurface Temperature Profiles"**  
-*Authors: Muhammad Aria Sastra and Suyud Widiono*  
-*Informatics Study Program, Faculty of Science and Technology, Universitas Teknologi Yogyakarta*
-
 ---
 
 ## 📥 Reviewer Resources & Large Artifacts Download (Google Drive)
