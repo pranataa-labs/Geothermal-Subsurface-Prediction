@@ -10,6 +10,9 @@
 > [!IMPORTANT]
 > ### 🎯 Model Testing: [`revised-model-testing.ipynb`](./revised-model-testing.ipynb)
 > The comprehensive model evaluation and verification pipeline is available directly in **[`revised-model-testing.ipynb`](./revised-model-testing.ipynb)**, containing the complete experimental execution, ablation benchmarks, physical gradient consistency evaluations, spatial validation, and statistical significance testing.
+>
+> ### ⚙️ Core Model Training: [`core-model-training.ipynb`](./core-model-training.ipynb)
+> The standalone training pipeline used to train and serialize the final production models (**`model_geotermal_hybrid.pkl`** and **`scaler_geotermal.pkl`**) using optimal hyperparameters on 200,000 samples.
 
 ---
 
@@ -46,8 +49,8 @@ artikel-revisi/
 │   └── Tabel_Hyperparameter_Optuna.xlsx
 │
 └── 📁 pelatihan-model/         # Model Training & Testing Notebooks
-    ├── core-model-training.ipynb       (Model training script to produce .pkl artifacts)
-    └── revised-model-testing.ipynb     (Comprehensive model evaluation & testing pipeline)
+    ├── ⭐ core-model-training.ipynb    (Model training script to produce .pkl artifacts)
+    └── ⭐ revised-model-testing.ipynb  (Comprehensive model evaluation & testing pipeline)
 ```
 
 ---
@@ -57,7 +60,7 @@ artikel-revisi/
 ```
 geothermal-subsurface-prediction/
 ├── ⭐ revised-model-testing.ipynb   # 🎯 [MODEL TESTING] Comprehensive experimental evaluation & statistical testing pipeline
-├── core-model-training.ipynb       # ⚙️ Core model training script used to generate .pkl artifacts
+├── ⭐ core-model-training.ipynb     # ⚙️ [CORE TRAINING] Standalone training script generating .pkl artifacts
 ├── app.py                          # Flask backend application serving predictions
 ├── requirements.txt                # Python dependencies
 ├── run_app.bat                     # One-click Windows application launcher
