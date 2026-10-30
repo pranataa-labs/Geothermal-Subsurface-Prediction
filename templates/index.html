@@ -139,56 +139,46 @@
               <div class="row g-2">
                 <div class="col-6">
                   <label class="form-label">1. Vp_7000m (km/s)</label>
-                  <span class="range-hint">Domain: [3.50, 6.55]</span>
                   <input type="number" step="any" class="form-control" name="vp_7000" value="{{ request.form.get('vp_7000', '') }}" required />
                 </div>
                 <div class="col-6">
                   <label class="form-label">2. crustal_thickness (km)</label>
-                  <span class="range-hint">Domain: [20.32, 54.73]</span>
                   <input type="number" step="any" class="form-control" name="crustal_thickness" value="{{ request.form.get('crustal_thickness', '') }}" required />
                 </div>
 
                 <div class="col-6">
                   <label class="form-label">3. dVs_20km (%)</label>
-                  <span class="range-hint">Domain: [-1.67, 8.17]</span>
                   <input type="number" step="any" class="form-control" name="dvs_20km" value="{{ request.form.get('dvs_20km', '') }}" required />
                 </div>
                 <div class="col-6">
                   <label class="form-label">4. Vp_6000m (km/s)</label>
-                  <span class="range-hint">Domain: [3.50, 6.55]</span>
                   <input type="number" step="any" class="form-control" name="vp_6000m" value="{{ request.form.get('vp_6000m', '') }}" required />
                 </div>
 
                 <div class="col-6">
                   <label class="form-label">5. VpVs_60km (ratio)</label>
-                  <span class="range-hint">Domain: [1.73, 1.80]</span>
                   <input type="number" step="any" class="form-control" name="vpvs_60km" value="{{ request.form.get('vpvs_60km', '') }}" required />
                 </div>
                 <div class="col-6">
                   <label class="form-label">6. dVs_60km (%)</label>
-                  <span class="range-hint">Domain: [-4.56, 6.52]</span>
                   <input type="number" step="any" class="form-control" name="dvs_60km" value="{{ request.form.get('dvs_60km', '') }}" required />
                 </div>
 
                 <div class="col-6">
                   <label class="form-label">7. gg_mantle_60km (°C/km)</label>
-                  <span class="range-hint">Domain: [4.52, 21.92]</span>
                   <input type="number" step="any" class="form-control" name="gg_mantle_60km" value="{{ request.form.get('gg_mantle_60km', '') }}" required />
                 </div>
                 <div class="col-6">
                   <label class="form-label">8. dVpVs_60km (%)</label>
-                  <span class="range-hint">Domain: [-2.58, 1.44]</span>
                   <input type="number" step="any" class="form-control" name="dvpvs_60km" value="{{ request.form.get('dvpvs_60km', '') }}" required />
                 </div>
 
                 <div class="col-6">
                   <label class="form-label">9. dVs_40km (%)</label>
-                  <span class="range-hint">Domain: [-3.16, 8.35]</span>
                   <input type="number" step="any" class="form-control" name="dvs_40km" value="{{ request.form.get('dvs_40km', '') }}" required />
                 </div>
                 <div class="col-6">
                   <label class="form-label">10. elev_detrend (m)</label>
-                  <span class="range-hint">Domain: [-788.2, 983.8]</span>
                   <input type="number" step="any" class="form-control" name="elevation_detrend" value="{{ request.form.get('elevation_detrend', '') }}" required />
                 </div>
               </div>
