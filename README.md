@@ -8,6 +8,9 @@
 ---
 
 > [!IMPORTANT]
+> ### Dataset Extraction & Subsampling: [`pemisahan-dataset.ipynb`](./pemisahan-dataset.ipynb)
+> Extracts the final 101 records (**`101_dataset_testing.csv`**) as an isolated application test set from the raw 534,942-row compilation (`dataset.csv`) and draws the uniform random subsample of $N = 200,000$ profiles (**`dataset_200k_with_coords.csv`**, `random_state = 42`) from the remaining 534,841-row primary sampling pool.
+>
 > ### Model Testing: [`revised-model-testing.ipynb`](./revised-model-testing.ipynb)
 > The comprehensive model evaluation and verification pipeline is available directly in **[`revised-model-testing.ipynb`](./revised-model-testing.ipynb)**, containing the complete experimental execution, ablation benchmarks, physical gradient consistency evaluations, spatial validation, and statistical significance testing.
 >
@@ -30,8 +33,11 @@ artikel-revisi/
 │   ├── model_geotermal_hybrid.pkl  (~976 MB, Multi-Output Hybrid Stacking Regressor)
 │   └── scaler_geotermal.pkl        (855 B, Fitted StandardScaler)
 │
-├── dataset/                    # Benchmark Dataset
-│   └── dataset_200k_with_coords.csv (~41.1 MB, Conterminous US multi-physics dataset)
+├── dataset/                    # Benchmark & Testing Datasets
+│   ├── dataset.csv                 (~1.11 GB, Raw 534,942-row Stanford Thermal Earth Model compilation)
+│   ├── dataset_200k_with_coords.csv (~41.1 MB, N = 200,000 subsampled multi-physics dataset, random_state=42)
+│   ├── 101_dataset_testing.csv     (~31.8 KB, Reserved final 101 records for independent application testing)
+│   └── pemisahan-dataset.ipynb     (Dataset extraction and subsampling notebook)
 │
 ├── image-xlxs/                 # Publication Figures & Tables
 │   ├── Figure_1_Revised_Architecture.png
@@ -59,6 +65,7 @@ artikel-revisi/
 
 ```
 geothermal-subsurface-prediction/
+├── pemisahan-dataset.ipynb          # [DATA PREP] Extracts 101_dataset_testing.csv & samples dataset_200k_with_coords.csv
 ├── revised-model-testing.ipynb      # [MODEL TESTING] Comprehensive experimental evaluation & statistical testing pipeline
 ├── core-model-training.ipynb        # [CORE TRAINING] Standalone training script generating .pkl artifacts
 ├── app.py                          # Flask backend application serving predictions
