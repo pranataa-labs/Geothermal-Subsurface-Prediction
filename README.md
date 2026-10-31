@@ -36,8 +36,7 @@ artikel-revisi/
 ├── dataset/                    # Benchmark & Testing Datasets
 │   ├── dataset.csv                 (~1.11 GB, Raw 534,942-row Stanford Thermal Earth Model compilation)
 │   ├── dataset_200k_with_coords.csv (~41.1 MB, N = 200,000 subsampled multi-physics dataset, random_state=42)
-│   ├── 101_dataset_testing.csv     (~31.8 KB, Reserved final 101 records for independent application testing)
-│   └── dataset-splitting.ipynb     (Dataset extraction and subsampling notebook)
+│   └── 101_dataset_testing.csv     (~31.8 KB, Reserved final 101 records for independent application testing)
 │
 ├── image-xlxs/                 # Publication Figures & Tables
 │   ├── Figure_1_Revised_Architecture.png
@@ -54,9 +53,9 @@ artikel-revisi/
 │   ├── Tabel_7_SHAP_dan_Feature_Importance_Multi_Kedalaman.xlsx
 │   └── Tabel_Hyperparameter_Optuna.xlsx
 │
-└── pelatihan-model/            # Model Training & Testing Notebooks
-    ├── core-model-training.ipynb       (Model training script to produce .pkl artifacts)
-    └── revised-model-testing.ipynb     (Comprehensive model evaluation & testing pipeline)
+├── dataset-splitting.ipynb     # [1] Dataset extraction & 200,000-row subsampling notebook
+├── core-model-training.ipynb   # [2] Model training notebook generating .pkl artifacts
+└── revised-model-testing.ipynb # [3] Comprehensive model evaluation & testing pipeline
 ```
 
 ---
