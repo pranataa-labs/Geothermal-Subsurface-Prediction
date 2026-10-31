@@ -1,33 +1,32 @@
 # Multi-Output Hybrid Ensemble for Geothermal Subsurface Temperature Profiles
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Framework Flask](https://img.shields.io/badge/framework-Flask-lightgrey.svg)](https://flask.palletsprojects.com/)
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Google Drive Artifacts](https://img.shields.io/badge/Google%20Drive-Artifacts%20%26%20Model-orange.svg)](https://drive.google.com/drive/folders/1eAcN74KvVi5Pjj2qIRBgYzUZwVC3m7qV?usp=sharing)
 
 ---
 
 > [!IMPORTANT]
-> ### Dataset Extraction & Subsampling: [`dataset-splitting.ipynb`](./dataset-splitting.ipynb)
+> ### 1. Dataset Extraction & Subsampling: [`dataset-splitting.ipynb`](./dataset-splitting.ipynb)
 > Extracts the final 101 records (**`101_dataset_testing.csv`**) as an isolated application test set from the raw 534,942-row compilation (`dataset.csv`) and draws the uniform random subsample of $N = 200,000$ profiles (**`dataset_200k_with_coords.csv`**, `random_state = 42`) from the remaining 534,841-row primary sampling pool.
 >
-> ### Model Testing: [`revised-model-testing.ipynb`](./revised-model-testing.ipynb)
-> The comprehensive model evaluation and verification pipeline is available directly in **[`revised-model-testing.ipynb`](./revised-model-testing.ipynb)**, containing the complete experimental execution, ablation benchmarks, physical gradient consistency evaluations, spatial validation, and statistical significance testing.
->
-> ### Core Model Training: [`core-model-training.ipynb`](./core-model-training.ipynb)
+> ### 2. Core Model Training: [`core-model-training.ipynb`](./core-model-training.ipynb)
 > The standalone training pipeline used to train and serialize the final production models (**`model_geotermal_hybrid.pkl`** and **`scaler_geotermal.pkl`**) using optimal hyperparameters on 200,000 samples.
+>
+> ### 3. Model Testing & Evaluation: [`revised-model-testing.ipynb`](./revised-model-testing.ipynb)
+> The comprehensive model evaluation and verification pipeline containing the complete experimental execution, 9-model ablation benchmarks, physical gradient consistency evaluations, spatial block cross-validation, SHAP attributions, and Wilcoxon statistical significance testing.
 
 ---
 
 ## Large Artifacts & Dataset Download (Google Drive)
 
-Due to GitHub's 100 MB individual file upload limit, the large serialized machine learning model (`model_geotermal_hybrid.pkl`, ~976 MB), full benchmark dataset (`dataset_200k_with_coords.csv`, ~41 MB), and high-resolution output assets are hosted on Google Drive:
+Due to GitHub's 100 MB individual file upload limit, the large serialized machine learning model (`model_geotermal_hybrid.pkl`, ~976 MB), full benchmark datasets (`dataset.csv` and `dataset_200k_with_coords.csv`), and high-resolution publication assets are hosted on Google Drive:
 
 **[Download Project Artifacts on Google Drive](https://drive.google.com/drive/folders/1eAcN74KvVi5Pjj2qIRBgYzUZwVC3m7qV?usp=sharing)**
 
 ### Google Drive Folder Structure (`artikel-revisi`):
 
-```
+```text
 artikel-revisi/
 ├── core-model-website/         # Serialized ML Model Artifacts
 │   ├── model_geotermal_hybrid.pkl  (~976 MB, Multi-Output Hybrid Stacking Regressor)
@@ -62,21 +61,10 @@ artikel-revisi/
 
 ## Repository Structure
 
-```
+```text
 geothermal-subsurface-prediction/
-├── dataset-splitting.ipynb          # [DATA PREP] Extracts 101_dataset_testing.csv & samples dataset_200k_with_coords.csv
-├── revised-model-testing.ipynb      # [MODEL TESTING] Comprehensive experimental evaluation & statistical testing pipeline
-├── core-model-training.ipynb        # [CORE TRAINING] Standalone training script generating .pkl artifacts
-├── app.py                          # Flask backend application serving predictions
-├── requirements.txt                # Python dependencies
-├── run_app.bat                     # One-click Windows application launcher
-├── scaler_geotermal.pkl            # Serialized StandardScaler (855 bytes)
-├── static/                         # CSS stylesheets and UI assets
-│   ├── dashboard.css
-│   ├── login.css
-│   └── login.js
-├── templates/                      # Frontend HTML templates
-│   └── index.html
-├── .gitignore                      # Git tracking exclusion rules
-└── README.md                       # Project documentation
+├── dataset-splitting.ipynb          # [1. DATA PREP] Extracts 101_dataset_testing.csv & samples dataset_200k_with_coords.csv
+├── core-model-training.ipynb        # [2. CORE TRAINING] Standalone training script generating .pkl artifacts
+├── revised-model-testing.ipynb      # [3. MODEL TESTING] Comprehensive experimental evaluation & statistical testing pipeline
+└── README.md                        # Project documentation
 ```
